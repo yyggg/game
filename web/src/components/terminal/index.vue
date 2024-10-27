@@ -182,7 +182,7 @@
 <script setup lang="ts">
 import type { TimelineItemProps } from 'element-plus'
 import { ElMessageBox, ElScrollbar } from 'element-plus'
-import { ref, reactive, nextTick } from 'vue'
+import { nextTick, onMounted, reactive, ref } from 'vue'
 import { useI18n } from 'vue-i18n'
 import { postChangeTerminalConfig } from '/@/api/common'
 import FormItem from '/@/components/formItem/index.vue'
@@ -313,6 +313,10 @@ const getSourceContent = (type: SourceType) => {
     }
     return content
 }
+
+onMounted(() => {
+    terminal.init()
+})
 </script>
 
 <style scoped lang="scss">
