@@ -408,6 +408,9 @@ const getSourceContent = (type: SourceType) => {
 }
 :deep(.main-dialog) {
     --el-dialog-padding-primary: 16px 16px 0 16px;
+    .el-dialog__body {
+        margin-top: 16px;
+    }
 }
 :deep(.ba-terminal-dialog) {
     --el-dialog-width: 46% !important;
