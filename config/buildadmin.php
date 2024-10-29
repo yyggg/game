@@ -79,6 +79,6 @@ return [
     'cdn_url'               => '',
     // 版本号
     'version'               => 'v2.1.2',
-    // 接口地址
+    // 中心接口地址（用于请求模块市场的数据等用途）
     'api_url'               => 'https://buildadmin.com',
 ];
