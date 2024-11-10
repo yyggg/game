@@ -165,7 +165,7 @@ const isExternalLink = (menus: RouteRecordRaw[], index: string): boolean => {
 const searchMenuIndex = (menus: RouteRecordRaw[], route: RouteLocationNormalizedLoaded): number | false => {
     let find: boolean | number = false
     for (const key in menus) {
-        if (menus[key].meta?.id && (menus[key].path == route.fullPath || menus[key].name == route.name)) {
+        if (menus[key].meta?.id && menus[key].path == route.fullPath) {
             return menus[key].meta.id as number
         }
         if (menus[key].children && menus[key].children?.length) {

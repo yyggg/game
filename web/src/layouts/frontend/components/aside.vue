@@ -38,7 +38,7 @@
                     :key="index"
                     @click="routerPush('', menu)"
                     class="user-menu-item"
-                    :class="route.name == menu.name ? 'active' : ''"
+                    :class="route.fullPath == menu.path ? 'active' : ''"
                 >
                     <Icon :name="menu.meta?.icon" size="16" color="var(--el-text-color-secondary)" />
                     <span>{{ menu.meta?.title }}</span>
