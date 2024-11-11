@@ -5,7 +5,7 @@ import type { MemberCenter } from '/@/stores/interface/index'
 
 export const useMemberCenter = defineStore('memberCenter', () => {
     const state: MemberCenter = reactive({
-        open: false,
+        open: true,
         layoutMode: 'Default',
         viewRoutes: [],
         showHeadline: false,
