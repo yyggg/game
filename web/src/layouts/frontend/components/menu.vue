@@ -120,7 +120,11 @@ const setActiveMenu = (route: RouteLocationNormalizedLoaded) => {
  * 检查菜单是否需要激活，如果否，还原 state.activeMenu
  */
 const onSelect = (index: string) => {
-    if (noNeedActive(siteConfig.headNav, index) || noNeedActive(memberCenter.state.navUserMenus, index)) {
+    if (
+        noNeedActive(siteConfig.headNav, index) ||
+        noNeedActive(memberCenter.state.navUserMenus, index) ||
+        noNeedActive(memberCenter.state.viewRoutes, index)
+    ) {
         const oldActiveMenu = state.activeMenu
         state.activeMenu = ''
         nextTick(() => {
