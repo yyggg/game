@@ -36,7 +36,7 @@
                 <div
                     v-for="(menu, index) in item.children"
                     :key="index"
-                    @click="routerPush('', menu)"
+                    @click="routerPush(menu)"
                     class="user-menu-item"
                     :class="route.fullPath == menu.path ? 'active' : ''"
                 >
@@ -60,10 +60,10 @@ const router = useRouter()
 const userInfo = useUserInfo()
 const memberCenter = useMemberCenter()
 
-const routerPush = (routeName: string, route?: RouteRecordRaw) => {
-    if (routeName) {
-        router.push({ name: routeName })
-    } else if (route) {
+const routerPush = (route: string | RouteRecordRaw) => {
+    if (typeof route === 'string') {
+        router.push({ name: route })
+    } else {
         onClickMenu(route)
     }
 }
