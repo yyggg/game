@@ -753,6 +753,11 @@ class Crud extends Backend
                 $this->indexVueData['defaultOrder']               = Helper::buildDefaultOrder($table['defaultSortField'], $table['defaultSortType']);
             }
         }
+
+        // 自定义了权重字段名称
+        if ($field['originalDesignType'] == 'weigh' && $field['name'] != 'weigh') {
+            $this->controllerData['attr']['weighField'] = $field['name'];
+        }
     }
 
     /**
