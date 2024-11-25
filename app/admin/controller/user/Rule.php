@@ -231,7 +231,7 @@ class Rule extends Backend
      * 获取菜单规则
      * @throws Throwable
      */
-    public function getRules(array $where = []): array
+    private function getRules(array $where = []): array
     {
         $pk      = $this->model->getPk();
         $initKey = $this->request->get("initKey/s", $pk);
