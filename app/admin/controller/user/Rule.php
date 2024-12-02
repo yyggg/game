@@ -25,6 +25,8 @@ class Rule extends Backend
 
     protected string|array $preExcludeFields = ['create_time', 'update_time'];
 
+    protected string|array $defaultSortField = ['weigh' => 'desc'];
+
     protected string|array $quickSearchField = 'title';
 
     /**
@@ -247,7 +249,12 @@ class Rule extends Backend
             $where[] = [$initKey, 'in', $this->initValue];
         }
 
-        $data = $this->model->where($where)->order('weigh desc,id asc')->select()->toArray();
+        $data = $this->model
+            ->where($where)
+            ->order($this->queryOrderBuilder())
+            ->select()
+            ->toArray();
+
         return $this->assembleTree ? $this->tree->assembleChild($data) : $data;
     }
 
