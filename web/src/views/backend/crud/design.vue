@@ -1304,6 +1304,20 @@ const loadData = () => {
         })
 }
 
+/**
+ * 字段名称重复时自动重命名
+ */
+const autoRenameRepeatField = (fieldName: string) => {
+    const nameRepeatKey = getArrayKey(state.fields, 'name', fieldName)
+    if (nameRepeatKey) {
+        fieldName += nameRepeatCount
+        nameRepeatCount++
+        return autoRenameRepeatField(fieldName)
+    } else {
+        return fieldName
+    }
+}
+
 onMounted(() => {
     loadData()
     const sortable = Sortable.create(designWindowRef.value, {
@@ -1332,13 +1346,10 @@ onMounted(() => {
                     state.table.defaultSortField = data.name
                 }
 
-                // name 重复字段自动重命名
-                const nameRepeatKey = getArrayKey(state.fields, 'name', data.name)
-                if (nameRepeatKey) {
-                    data.name = data.name + nameRepeatCount
-                    nameRepeatCount++
-                }
+                // name 重复时，自动重命名
+                data.name = autoRenameRepeatField(data.name)
 
+                // 插入字段
                 state.fields.splice(evt.newIndex!, 0, data)
 
                 logTableDesignChange({
