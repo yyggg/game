@@ -180,6 +180,8 @@ const onElChange = (file: UploadFileExt, files: UploadFiles) => {
     let fd = new FormData()
     fd.append('file', file.raw)
     fd = formDataAppend(fd)
+
+    file.status = 'uploading'
     state.uploading++
     fileUpload(fd, { uuid: uuid() }, props.forceLocal, {
         onUploadProgress: (evt: AxiosProgressEvent) => {
