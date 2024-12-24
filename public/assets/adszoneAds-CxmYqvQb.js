@@ -1,0 +1,1 @@
+const e={id:"ID",zone_id:"广告位ID",adszone_zone__name:"广告位名称",title:"标题",image:"图片地址",linkurl:"链接地址",target:"URL打开方式","target _blank":"新窗口打开","target _self":"当前窗口打开",ad_code:"广告代码",effectime:"生效时间",expiretime:"到期时间",weigh:"权重",create_time:"添加时间",update_time:"更新时间","quick Search Fields":"ID"};export{e as default};

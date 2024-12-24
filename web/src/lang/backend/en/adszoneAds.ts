@@ -1,0 +1,18 @@
+export default {
+    id: 'id',
+    zone_id: 'zone_id',
+    adszone_zone__name: 'name',
+    title: 'title',
+    image: 'image',
+    linkurl: 'linkurl',
+    target: 'target',
+    'target _blank': 'target _blank',
+    'target _self': 'target _self',
+    code: 'code',
+    effectime: 'effectime',
+    expiretime: 'expiretime',
+    weigh: 'weigh',
+    create_time: 'create_time',
+    update_time: 'update_time',
+    'quick Search Fields': 'id',
+}

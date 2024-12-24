@@ -5,7 +5,7 @@
 
 return [
     // npm包管理器
-    'npm_package_manager' => 'pnpm',
+    'npm_package_manager' => 'yarn',
     // 允许执行的命令
     'commands'            => [
         // 数据库迁移命令
