@@ -1,0 +1,16 @@
+export default {
+    id: 'ID',
+    uid: '用户ID',
+    bank_name: '所属银行',
+    branch: '支行或/IFSC',
+    card_no: '卡号',
+    username: '姓名',
+    province: '省份',
+    city: '城市',
+    create_time: '创建时间',
+    status: '状态',
+    'status 0': '默认',
+    'status 1': '正常',
+    'status 2': '停用',
+    'quick Search Fields': 'ID',
+}

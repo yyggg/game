@@ -1,0 +1,16 @@
+export default {
+    id: 'id',
+    uid: 'uid',
+    title: 'title',
+    order_no: 'order_no',
+    create_time: 'create_time',
+    pay_time: 'pay_time',
+    amount: 'amount',
+    now_money: 'now_money',
+    pay_type: 'pay_type',
+    status: 'status',
+    do_uid: 'do_uid',
+    complete_time: 'complete_time',
+    remark: 'remark',
+    'quick Search Fields': 'id',
+}

@@ -35,6 +35,7 @@ class Config extends Backend
     public function index(): void
     {
         $configGroup = get_sys_config('config_group');
+
         $config      = $this->model->order('weigh desc')->select()->toArray();
 
         $list           = [];
@@ -44,6 +45,7 @@ class Config extends Backend
             $list[$item['key']]['title']  = __($item['value']);
             $newConfigGroup[$item['key']] = $list[$item['key']]['title'];
         }
+
         foreach ($config as $item) {
             if (array_key_exists($item['group'], $newConfigGroup)) {
                 $item['title']                  = __($item['title']);

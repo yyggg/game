@@ -1,0 +1,16 @@
+export default {
+    id: 'ID',
+    uid: '用户ID',
+    title: '支付项目名称',
+    order_no: '平台单号',
+    create_time: '下单时间',
+    pay_time: '支付时间',
+    amount: '支付金额',
+    now_money: '支付前账户总金额',
+    pay_type: '支付类型',
+    status: '状态:0待支付,1支付中,2已支付,3用户取消,4系统关闭,5失败',
+    do_uid: '操作人ID',
+    complete_time: '完成时间',
+    remark: '备注',
+    'quick Search Fields': 'ID',
+}

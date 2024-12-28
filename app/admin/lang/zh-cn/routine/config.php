@@ -22,4 +22,9 @@ return [
     'Congratulations, receiving this email means that your email service has been configured correctly' => '恭喜您，收到此邮件代表您的邮件服务已配置正确；这是邮件主体 <b>在主体中可以使用Html!</b>',
     'The current page configuration item was updated successfully'                                      => '当前页配置项更新成功！',
     'Backend entrance rule'                                                                             => '后台入口请以 / 开头，且只包含数字和字母。',
+    'Member'                                                                                            => '会员配置',
+    'Coin Name'                                                                                         => '虚拟币名称',
+    'Register Give'                                                                                     => '注册赠送',
+
+    'Agent'                                                                                             => '代理配置',
 ];
