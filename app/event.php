@@ -10,6 +10,7 @@ return [
         'HttpEnd'  => [],
         'LogLevel' => [],
         'LogWrite' => [],
+        'MoneyLog' => [app\common\event\MoneyLog::class]
     ],
 
     'subscribe' => [

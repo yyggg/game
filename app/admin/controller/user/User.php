@@ -153,4 +153,23 @@ class User extends Backend
             'remark' => get_route_remark(),
         ]);
     }
+
+    /**
+     * 加款扣钱
+     *
+     * @throws \think\db\exception\DataNotFoundException
+     * @throws \think\db\exception\DbException
+     * @throws \think\db\exception\ModelNotFoundException
+     */
+    public function money(): void
+    {
+        $param = $this->request->param();
+        $user = $this->model->find($param['uid']);
+        $data = [
+            'user' => $user,
+            'param' => $param,
+        ];
+        event('MoneyLog', $data);
+
+    }
 }

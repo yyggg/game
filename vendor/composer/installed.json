@@ -759,12 +759,12 @@
         },
         {
             "name": "symfony/finder",
-            "version": "v7.2.0",
-            "version_normalized": "7.2.0.0",
+            "version": "v7.2.2",
+            "version_normalized": "7.2.2.0",
             "dist": {
                 "type": "zip",
-                "url": "https://mirrors.cloud.tencent.com/repository/composer/symfony/finder/v7.2.0/symfony-finder-v7.2.0.zip",
-                "reference": "6de263e5868b9a137602dd1e33e4d48bfae99c49",
+                "url": "https://mirrors.tencent.com/repository/composer/symfony/finder/v7.2.2/symfony-finder-v7.2.2.zip",
+                "reference": "87a71856f2f56e4100373e92529eed3171695cfb",
                 "shasum": ""
             },
             "require": {
@@ -773,7 +773,7 @@
             "require-dev": {
                 "symfony/filesystem": "^6.4|^7.0"
             },
-            "time": "2024-10-23T06:56:12+00:00",
+            "time": "2024-12-30T19:00:17+00:00",
             "type": "library",
             "installation-source": "dist",
             "autoload": {
@@ -803,12 +803,12 @@
         },
         {
             "name": "symfony/http-foundation",
-            "version": "v7.2.0",
-            "version_normalized": "7.2.0.0",
+            "version": "v7.2.2",
+            "version_normalized": "7.2.2.0",
             "dist": {
                 "type": "zip",
-                "url": "https://mirrors.cloud.tencent.com/repository/composer/symfony/http-foundation/v7.2.0/symfony-http-foundation-v7.2.0.zip",
-                "reference": "e88a66c3997859532bc2ddd6dd8f35aba2711744",
+                "url": "https://mirrors.tencent.com/repository/composer/symfony/http-foundation/v7.2.2/symfony-http-foundation-v7.2.2.zip",
+                "reference": "62d1a43796ca3fea3f83a8470dfe63a4af3bc588",
                 "shasum": ""
             },
             "require": {
@@ -831,7 +831,7 @@
                 "symfony/mime": "^6.4|^7.0",
                 "symfony/rate-limiter": "^6.4|^7.0"
             },
-            "time": "2024-11-13T18:58:46+00:00",
+            "time": "2024-12-30T19:00:17+00:00",
             "type": "library",
             "installation-source": "dist",
             "autoload": {

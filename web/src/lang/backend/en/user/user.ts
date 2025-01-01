@@ -1,5 +1,10 @@
 export default {
     'User name': 'Username',
+    account: 'Account',
+    amount: 'Amount',
+    money: 'Balance',
+    'Add Money': 'Add Money',
+    'Lock Money': 'Lock Money',
     nickname: 'Nickname',
     grouping: 'Group',
     'head portrait': 'Profile picture',
@@ -19,4 +24,5 @@ export default {
     'Please leave blank if not modified': 'Please leave blank if you do not modify',
     'Personal signature': 'Personal signature',
     'Login account': 'Login account name',
+    'Give users extra money': 'Give users extra money, Please operate with caution',
 }

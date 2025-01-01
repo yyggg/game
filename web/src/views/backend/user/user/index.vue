@@ -4,7 +4,7 @@
 
         <!-- 表格顶部菜单 -->
         <TableHeader
-            :buttons="['refresh', 'add', 'edit', 'delete', 'comSearch', 'quickSearch', 'columnDisplay']"
+            :buttons="['refresh', 'add', 'edit', 'money', 'delete', 'comSearch', 'quickSearch', 'columnDisplay']"
             :quick-search-placeholder="t('Quick search placeholder', { fields: t('user.user.User name') + '/' + t('user.user.nickname') })"
         />
 
@@ -14,6 +14,7 @@
 
         <!-- 表单 -->
         <PopupForm />
+        <AddMoneyForm />
     </div>
 </template>
 
@@ -21,6 +22,7 @@
 import { ref, provide } from 'vue'
 import baTableClass from '/@/utils/baTable'
 import PopupForm from './popupForm.vue'
+import AddMoneyForm from './addMoney.vue'
 import Table from '/@/components/table/index.vue'
 import TableHeader from '/@/components/table/header/index.vue'
 import { defaultOptButtons } from '/@/components/table'
@@ -30,8 +32,29 @@ import { useI18n } from 'vue-i18n'
 defineOptions({
     name: 'user/user',
 })
-
 const { t } = useI18n()
+
+// 自定义按钮
+const optButtons: OptButton[] = defaultOptButtons(['edit', 'delete'])
+optButtons.unshift({
+    render: 'tipButton',
+    name: 'addMoney',
+    title: t('user.user.Add Money'),
+    text: '',
+    type: 'warning',
+    icon: 'fa fa-database',
+    click(row:TableRow) {
+        // 表单默认值
+        baTable.form.items = {
+            uid: row.id,
+            type: 3
+        }
+        baTable.table.extend!.row = row
+        baTable.form.operate = 'money'
+    }
+})
+
+
 const tableRef = ref()
 const baTable = new baTableClass(
     new baTableApi('/admin/user.User/'),
@@ -39,8 +62,10 @@ const baTable = new baTableClass(
         column: [
             { type: 'selection', align: 'center', operator: false },
             { label: t('Id'), prop: 'id', align: 'center', operator: '=', operatorPlaceholder: t('Id'), width: 70 },
-            { label: t('user.user.User name'), prop: 'username', align: 'center', operator: 'LIKE', operatorPlaceholder: t('Fuzzy query') },
-            { label: t('user.user.nickname'), prop: 'nickname', align: 'center', operator: 'LIKE', operatorPlaceholder: t('Fuzzy query') },
+            { label: t('user.user.User name'), prop: 'username', align: 'center', operator: 'LIKE', operatorPlaceholder: t('user.user.User name') },
+            { label: t('user.user.account'), prop: 'account', align: 'center', operator: 'LIKE', operatorPlaceholder: t('user.user.account') },
+            { label: t('user.user.money'), prop: 'money', align: 'center', operator: 'LIKE', operatorPlaceholder: t('user.user.money') },
+            { label: t('user.user.Lock Money'), prop: 'lock_money', align: 'center', operator: 'LIKE', operatorPlaceholder: t('user.user.Lock Money') },
             {
                 label: t('user.user.grouping'),
                 prop: 'group.name',
@@ -48,15 +73,6 @@ const baTable = new baTableClass(
                 operator: 'LIKE',
                 operatorPlaceholder: t('Fuzzy query'),
                 render: 'tag',
-            },
-            { label: t('user.user.head portrait'), prop: 'avatar', align: 'center', render: 'image', operator: false },
-            {
-                label: t('user.user.Gender'),
-                prop: 'gender',
-                align: 'center',
-                render: 'tag',
-                custom: { '0': 'info', '1': '', '2': 'success' },
-                replaceValue: { '0': t('Unknown'), '1': t('user.user.male'), '2': t('user.user.female') },
             },
             { label: t('user.user.mobile'), prop: 'mobile', align: 'center', operator: 'LIKE', operatorPlaceholder: t('Fuzzy query') },
             {
@@ -88,9 +104,9 @@ const baTable = new baTableClass(
             {
                 label: t('Operate'),
                 align: 'center',
-                width: '100',
+                width: '150',
                 render: 'buttons',
-                buttons: defaultOptButtons(['edit', 'delete']),
+                buttons: optButtons,
                 operator: false,
             },
         ],
